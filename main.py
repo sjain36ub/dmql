@@ -121,7 +121,7 @@ def main():
 
     # Display Image on Landing Page
     st.markdown('<h1 style="position: absolute; top: 10px; left: 10px;">Welcome to the International Football Database Portal</h1>', unsafe_allow_html=True)
-    image_path = "/Users/shreyansh/PycharmProjects/pythonProject/imago1002614356h.jpg"  # Adjust this path based on where you place the image
+    image_path = "imago1002614356h.jpg"  # Adjust this path based on where you place the image
     st.image(image_path, caption="Football Image", use_column_width=True)
 
     if menu == "Dashboard":
