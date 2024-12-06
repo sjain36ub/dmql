@@ -124,7 +124,7 @@ def main():
     )
 
     # Display Image on Landing Page
-    st.image("/Users/shreyansh/PycharmProjects/pythonProject/imago1002614356h.jpg", caption="Football Image", use_column_width=True)
+    st.image("imago1002614356h.jpg", caption="Football Image", use_column_width=True)
 
     # Title at the top-left
     st.markdown('<h1>Welcome to the International Football Database Portal</h1>', unsafe_allow_html=True)
