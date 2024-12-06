@@ -14,13 +14,9 @@ st.markdown("""
         }
         h1 {
             color: #2e8b57;
-            font-size: 40px;
+            font-size: 45px;
             font-weight: bold;
-            font-family: 'Times New Roman', serif;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 9999;
+            font-family: 'Verdana', sans-serif; /* Changed font to Verdana */
         }
         h2, h3 {
             color: #2e8b57;
@@ -124,10 +120,9 @@ def main():
     )
 
     # Display Image on Landing Page
-    st.image("imago1002614356h.jpg", caption="Football Image", use_column_width=True)
-
-    # Title at the top-left
-    st.markdown('<h1>Welcome to the International Football Database Portal</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="position: absolute; top: 10px; left: 10px;">Welcome to the International Football Database Portal</h1>', unsafe_allow_html=True)
+    image_path = "/Users/shreyansh/PycharmProjects/pythonProject/imago1002614356h.jpg"  # Adjust this path based on where you place the image
+    st.image(image_path, caption="Football Image", use_column_width=True)
 
     if menu == "Dashboard":
         st.subheader("Welcome to the International Football Database Portal")
@@ -214,3 +209,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
