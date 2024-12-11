@@ -4,7 +4,7 @@ import psycopg2
 import plotly.express as px
 from config import DATABASE_CONFIG
 
-# Add custom CSS for colors, styling, and animations
+
 st.markdown("""
     <style>
         body {
@@ -96,7 +96,6 @@ def calculate_team_performance():
     
     if data is not None:
         df = pd.DataFrame(data)
-        # Group by team and year, then calculate the winning percentage
         team_performance = df.groupby(['year', 'team'])['win'].agg(['sum', 'count'])
         team_performance['win_percentage'] = (team_performance['sum'] / team_performance['count']) * 100
         team_performance.reset_index(inplace=True)
@@ -112,16 +111,14 @@ def plot_team_performance(team_performance, team_name):
     st.plotly_chart(fig)
 
 def main():
-    # Top Navigation Menu
     menu = st.selectbox(
         "Navigation",
         ["Dashboard", "Data Operations", "Statistics and Trends", "Advanced Querying"],
         index=0
     )
 
-    # Display Image on Landing Page
     st.markdown('<h1 style="position: absolute; top: 10px; left: 10px;">Welcome to the International Football Database Portal</h1>', unsafe_allow_html=True)
-    image_path = "imago1002614356h.jpg"  # Adjust this path based on where you place the image
+    image_path = "imago1002614356h.jpg"  
     st.image(image_path, caption="Football Image", use_column_width=True)
 
     if menu == "Dashboard":
@@ -192,7 +189,6 @@ def main():
             st.subheader("Team Performance: Winning Percentage Over the Years")
             team_performance = calculate_team_performance()
             if team_performance is not None:
-                # Get the list of unique teams for selection
                 teams = team_performance['team'].unique()
                 selected_team = st.selectbox("Select Team", teams)
                 plot_team_performance(team_performance, selected_team)
